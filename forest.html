@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sky Relic – Lost Forest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="forest-body">
+
+  <header class="top-bar">
+    <div class="logo">
+      <div class="logo-circle">SR</div>
+      <span class="logo-text">SKY<span class="accent">RELIC</span></span>
+    </div>
+    <div class="system-status">
+      <span class="dot online"></span>
+      <span>SYSTEM ONLINE</span>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <main id="forestIntro" class="screen active">
+    <section class="briefing-panel">
+      <header class="briefing-header">
+        <h2>LEVEL 2</h2>
+        <span class="badge">THE LOST FOREST</span>
+      </header>
+      <ul class="briefing-list">
+        <li>Find 5 Golden Treasures.</li>
+        <li>Avoid the Red Guards.</li>
+        <li>Don’t lose all your health.</li>
+      </ul>
+      <footer class="briefing-footer">
+        <button id="startForestBtn" class="primary-button">START MISSION</button>
+      </footer>
+    </section>
+  </main>
+
+  <!-- GAME -->
+  <main id="forestGame" class="screen">
+    <div class="forest-hud">
+      <div class="hp-bar">
+        <span class="hp-label">❤</span>
+        <div class="hp-track"><div id="hpFill" class="hp-fill"></div></div>
+        <span id="hpText" class="hp-text">100 HP</span>
+      </div>
+      <div class="forest-timer"><span id="timerText">2:00</span></div>
+    </div>
+
+    <div id="forestContainer" class="forest-container"></div>
+
+    <div class="forest-bottom-hud">
+      <div class="treasure-counter">🏆 <span id="treasureCount">0</span> / 5</div>
+      <div class="hint">WASD to Move</div>
+    </div>
+  </main>
+
+  <!-- RESULT -->
+  <div id="forestResult" class="overlay hidden">
+    <div class="success-panel">
+      <h2 id="resultTitle">MISSION REPORT</h2>
+      <p id="resultMessage"></p>
+      <button class="primary-button" onclick="window.location.href='index.html'">BACK TO HANGAR</button>
+    </div>
+  </div>
+
+  <script src="forest.js"></script>
+</body>
+</html>
