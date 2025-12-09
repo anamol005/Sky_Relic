@@ -1,5 +1,3 @@
-# Sky_Relic
-
 Sky Relic: Treasure Hunt
 ========================
 
