@@ -1,0 +1,1284 @@
+:root {
+  --bg: #050816;
+  --bg-alt: #0b1120;
+  --card: #020617;
+  --accent: #00f5d4;
+  --accent-soft: rgba(0, 245, 212, 0.3);
+  --text: #e5e7eb;
+  --muted: #6b7280;
+  --border: #1f2937;
+  --font-heading: "Orbitron", system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
+}
+
+/* ================= GLOBAL ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(circle at center, #0b1120, #020617 60%, #000);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+body {
+  overflow: hidden; /* game owns the layout */
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent), #0ea5e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #001219;
+  font-weight: 700;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  letter-spacing: 0.18em;
+  font-size: 18px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+/* ============ SCREEN HANDLING ============ */
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* =========================================
+   HOME SCREEN
+========================================= */
+
+.home-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 120px;
+  gap: 80px;
+  height: calc(100vh - 70px);
+}
+
+/* LEFT SIDE */
+
+.hero {
+  max-width: 520px;
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.game-title {
+  font-family: var(--font-heading);
+  font-size: 110px;
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.relic {
+  color: var(--accent);
+  font-size: 110px;
+}
+
+.subtitle {
+  margin-top: 20px;
+  color: #9ba3b0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Mission cards */
+
+.mission-buttons {
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.mission-card {
+  width: 230px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.mission-icon {
+  font-size: 32px;
+}
+
+.mission1-icon {
+  color: #00f5d4;
+}
+
+.mission2-icon {
+  color: #facc15;
+}
+
+.mission-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.mission-title {
+  margin: 0;
+  font-size: 22px;
+  font-family: var(--font-heading);
+}
+
+/* RIGHT SIDE – PILOT BRIEFING CARD */
+
+.pilot-briefing-card {
+  width: 520px;
+  background: rgba(5, 12, 25, 0.85);
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  border-radius: 32px;
+  padding: 40px 48px;
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.18);
+}
+
+.pilot-briefing-card h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: 0.25em;
+  font-size: 26px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+  margin: 22px 0 26px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+}
+
+.input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  margin: 8px 0 20px;
+  border: 1px solid #1d2b3a;
+  background: #020b18;
+  color: var(--text);
+}
+
+/* Difficulty buttons */
+
+.difficulty-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pill-button {
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid #1e2536;
+  background: #0b1424;
+  color: #818a9b;
+  cursor: pointer;
+}
+
+.pill-button.active {
+  border-color: var(--accent);
+  background: rgba(0, 245, 212, 0.25);
+  color: var(--accent);
+}
+
+/* Launch button */
+
+.primary-button {
+  width: 100%;
+  padding: 18px;
+  background: var(--accent);
+  color: #00151a;
+  border-radius: 14px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Footer buttons */
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.footer-btn {
+  padding: 10px 26px;
+  border-radius: 12px;
+  background: #112031;
+  color: #d2d8e0;
+  border: 1px solid #223042;
+  cursor: pointer;
+}
+
+/* ===========================
+   PAUSE MENU OVERLAY
+=========================== */
+
+.pause-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+.pause-window {
+  width: 70%;
+  max-width: 900px;
+  background: #f3efe8;
+  padding: 40px;
+  border-radius: 20px;
+  border: 4px solid #2e2e2e;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.4);
+}
+
+.pause-title {
+  font-size: 62px;
+  margin: 0 0 20px;
+  font-weight: 800;
+  color: #333;
+  text-align: left;
+}
+
+.pause-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.pause-left {
+  text-align: center;
+}
+
+.pause-placeholder {
+  width: 180px;
+  height: 120px;
+  border-radius: 20px;
+  border: 4px dashed #2e2e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin-bottom: 16px;
+}
+
+.pause-country {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 2px;
+}
+
+.pause-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.pause-btn {
+  padding: 16px 40px;
+  background: #f4efea;
+  border: 4px solid #2e2e2e;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pause-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===========================================
+   LEVEL 1 – SIDEBAR + MAP
+=========================================== */
+
+.level1-layout {
+  display: grid;
+  grid-template-columns: 290px 1fr; /* compact sidebar like reference */
+  height: calc(100vh - 70px);
+}
+
+/* LEFT SIDEBAR COLUMN */
+
+.sidebar {
+  background: radial-gradient(circle at top left, #101828 0, #050816 60%, #020409 100%);
+  border-right: 1px solid #0f172a;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+/* PTS + ENERGY PANEL */
+
+.points-box {
+  padding: 14px 14px 12px;
+  background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.6);
+}
+
+.points-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.score {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.energy-bar {
+  background: #020617;
+  border-radius: 999px;
+  height: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.energy-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #22c55e, #eab308, #ef4444);
+}
+
+.energy-value {
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+/* GENERIC PANEL (Flight Computer / Weather) */
+
+.panel {
+  background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.7);
+}
+
+.panel-header {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.8);
+  margin-bottom: 8px;
+}
+
+/* FLIGHT COMPUTER CONTENT */
+
+.dest-header-label {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.8);
+  margin-bottom: 4px;
+}
+
+.dest-airport-code {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #e5f4ff;
+  margin-bottom: 2px;
+}
+
+.dest-airport-name {
+  font-size: 12px;
+  color: rgba(148, 163, 184, 0.95);
+  margin-bottom: 10px;
+}
+
+/* DISTANCE / COST ROW */
+
+.stat-row {
+  display: flex;
+  gap: 8px;
+}
+
+.stat-card {
+  flex: 1;
+  background: linear-gradient(135deg, #0b1220, #020617);
+  border-radius: 12px;
+  padding: 9px 10px;
+  border: 1px solid rgba(30, 64, 175, 0.55);
+}
+
+.stat-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(148, 163, 184, 0.9);
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* WEATHER PANEL */
+
+.weather-panel .panel-header {
+  margin-bottom: 6px;
+}
+
+.weather-main-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #e5e7eb;
+  margin-bottom: 4px;
+}
+
+#weatherMain {
+  text-transform: capitalize;
+}
+
+.weather-wind {
+  font-size: 12px;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+/* START / IN FLIGHT BUTTON */
+
+.flight-btn {
+  margin-top: 4px;
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #06f5d4, #00e5ff);
+  color: #00101a;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(34, 211, 238, 0.55);
+}
+
+.flight-btn:disabled {
+  cursor: default;
+  opacity: 0.65;
+  box-shadow: none;
+}
+
+/* SKYTOWER CONTROL (bottom panel) */
+
+.skytower {
+  margin-top: auto;
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #01030b 100%);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  overflow: hidden;
+}
+
+.skytower-header {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.4);
+  background: linear-gradient(90deg, rgba(8, 47, 73, 0.7), transparent);
+}
+
+.skytower-box {
+  padding: 10px 12px 12px;
+}
+
+.skytower-box h3 {
+  margin: 0 0 6px 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9efad9;
+}
+
+/* LOG BOX */
+
+.log-box {
+  padding: 8px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 11px;
+  color: #bbf7d0;
+  background: radial-gradient(circle at top left, #020617 0, #020617 60%, #000 100%);
+  border-radius: 10px;
+  border: 1px solid #064e3b;
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+/* MAP PANEL */
+
+.map-panel {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============= DARK MAP SKIN & PLANE ICON ============= */
+
+.leaflet-container {
+  background: #020617;
+}
+
+/* Plane marker drawn via JS (✈) */
+.plane-marker {
+  color: #00f5d4;
+  font-size: 22px;
+  text-shadow: 0 0 8px rgba(0, 245, 212, 0.8);
+}
+
+/* Leaflet popup aesthetic */
+
+.leaflet-popup-content-wrapper {
+  background: #050b16;
+  color: #e5e7eb;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.leaflet-popup-tip {
+  background: #050b16;
+  border-top: 1px solid rgba(0, 245, 212, 0.35);
+}
+
+.leaflet-control-zoom a {
+  background: rgba(10, 20, 35, 0.9);
+  color: #e5e7eb;
+  border: 1px solid #0f172a;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(0, 245, 212, 0.3);
+  color: #00f5d4;
+}
+
+/* ===========================
+   SUCCESS SCREEN
+=========================== */
+
+.success-panel {
+  max-width: 480px;
+  margin: 80px auto;
+  padding: 32px;
+  border-radius: 22px;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--accent-soft);
+}
+
+.success-icon {
+  font-size: 46px;
+  color: var(--accent);
+}
+
+/* -------------------------------------------------
+   CINEMATIC MISSION BRIEFING OVERLAY
+-------------------------------------------------- */
+
+#mission-briefing-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.2), transparent 55%),
+    radial-gradient(circle at bottom, rgba(34, 197, 94, 0.18), #020617 70%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#mission-briefing-overlay.visible {
+  display: flex;
+}
+
+.briefing-card {
+  width: min(880px, 90vw);
+  padding: 32px 40px 28px;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #020617 0, #020617 35%, #020617 100%);
+  border: 1px solid rgba(45, 212, 191, 0.5);
+  box-shadow: 0 40px 90px rgba(15, 23, 42, 0.9);
+}
+
+.briefing-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.briefing-title {
+  font-size: 26px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.briefing-tag {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 250, 252, 0.7);
+  color: #f9fafb;
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.06), transparent 60%);
+}
+
+.briefing-text {
+  font-size: 14px;
+  color: rgba(209, 213, 219, 0.95);
+  margin-bottom: 8px;
+}
+
+.briefing-list {
+  margin: 16px 0 18px;
+  padding-left: 20px;
+  color: rgba(209, 213, 219, 0.96);
+  font-size: 14px;
+}
+
+.briefing-list li + li {
+  margin-top: 6px;
+}
+
+.briefing-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.briefing-btn {
+  min-width: 150px;
+  border-radius: 999px;
+  padding: 10px 18px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.briefing-btn.secondary {
+  background: transparent;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.briefing-btn.primary {
+  background: linear-gradient(135deg, #06f5d4, #22d3ee);
+  color: #020617;
+  box-shadow: 0 20px 60px rgba(45, 212, 191, 0.6);
+}
+
+
+#mission-briefing-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Real cinematic gradient + blur */
+    background:
+        radial-gradient(circle at top, rgba(56, 189, 248, 0.10), transparent 55%),
+        radial-gradient(circle at bottom, rgba(16, 185, 129, 0.10), transparent 65%),
+        rgba(0, 8, 20, 0.60);  /* dark fade overlay */
+
+    backdrop-filter: blur(14px) brightness(0.85);   /* important */
+    -webkit-backdrop-filter: blur(14px) brightness(0.85);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 9999;
+}
+
+#mission-briefing-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.briefing-card {
+    border: 1px solid rgba(0, 245, 212, 0.35);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.55);
+}
+
+.skytower {
+  margin-top: auto;
+  border-radius: 16px;
+  background: radial-gradient(circle at top left, #020617 0, #020617 40%, #01030b 100%);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  padding: 10px 14px 14px;
+}
+
+.skytower-box {
+  margin-top: 8px;
+  padding: 0;              /* remove inner padding so log fills */
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 200, 0.18);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.skytower-box h3 {
+  padding: 8px 10px;
+  margin: 0;
+}
+
+.skytower-box .log-box {
+  margin: 0;
+  border-radius: 0 0 12px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ======================================
+   FINAL CLEAN PLANE ICON (NO CONFLICTS)
+====================================== */
+
+.plane-icon {
+    display: inline-block;
+    font-size: 26px;
+    color: #00f5d4;
+    text-shadow: 0 0 8px rgba(0, 245, 212, 0.8);
+
+    /* smooth rotation */
+    transform-origin: center center;
+    transition: transform 0.12s linear;
+}
+
+
+/* =======================================
+   SKY RELIC — AAA INTRO SCREEN (FINAL)
+======================================= */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    background: #02121f;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 1.2s ease;
+    z-index: 999999;
+}
+
+/* Fade-out effect */
+.intro-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ----------- CLEAN ANIMATED BG (NO TEXT TEXTURE) ----------- */
+
+.stars, .stars2, .stars3 {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, #063044, transparent 60%),
+                radial-gradient(circle at 70% 70%, #020a12, #000814 80%);
+    animation: bgMove 18s ease-in-out infinite alternate;
+    opacity: 0.35;
+}
+
+.stars2 {
+    animation-duration: 26s;
+    opacity: 0.22;
+}
+
+.stars3 {
+    animation-duration: 34s;
+    opacity: 0.14;
+}
+
+@keyframes bgMove {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.18) translate(-3%, -3%); }
+}
+
+/* ----------- CENTER CONTENT ----------- */
+
+.intro-center {
+    text-align: center;
+    z-index: 10;
+}
+
+/* ----------- BOOT SEQUENCE LINES ----------- */
+
+.boot-line {
+    font-size: 14px;
+    color: #9bdcff;
+    opacity: 0;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+    animation: fadeIn 1s forwards;
+}
+
+#boot1 { animation-delay: 0.3s; }
+#boot2 { animation-delay: 1.1s; }
+#boot3 { animation-delay: 2s; }
+#boot4 { animation-delay: 2.8s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ----------- MAIN TITLE ----------- */
+
+.intro-title {
+    font-size: 54px;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 0.22em;
+    margin-top: 40px;
+    color: #e7faff;
+    text-shadow: 0 0 18px #00eaff, 0 0 28px rgba(0,255,255,0.4);
+    opacity: 0;
+    animation: titleIn 1.4s ease forwards;
+    animation-delay: 3.8s;
+}
+
+@keyframes titleIn {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------- SUBTITLE ----------- */
+
+.intro-sub {
+    color: #c6e6ff;
+    opacity: 0;
+    animation: fadeIn 1.2s forwards;
+    animation-delay: 4.4s;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    margin-top: 8px;
+}
+
+/* ----------- PRESS ANY KEY ----------- */
+
+.intro-press {
+    color: #ffffffcc;
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    margin-top: 40px;
+    opacity: 0;
+    animation: blink 1.3s infinite;
+    animation-delay: 5s;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+}
+
+
+
+/* =======================================
+   SKY RELIC — CLEAN CINEMATIC INTRO
+======================================= */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: radial-gradient(circle at top right,
+        #0a1c2b 0%,
+        #031018 40%,
+        #00070d 100%
+    );
+
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 99999;
+}
+
+.intro-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* minimal animated pulse lighting */
+.intro-screen::before {
+    content: "";
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(circle, rgba(0,255,220,0.12), transparent 70%);
+    top: -300px;
+    right: -300px;
+    filter: blur(70px);
+    animation: glowPulse 6s infinite alternate ease-in-out;
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.2; transform: scale(1); }
+    100% { opacity: 0.45; transform: scale(1.2); }
+}
+
+/* Boot text */
+.boot-line {
+    font-size: 14px;
+    color: #9bdcff;
+    opacity: 0;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+    animation: fadeIn 1s forwards;
+}
+
+#boot1 { animation-delay: 0.3s; }
+#boot2 { animation-delay: 1.0s; }
+#boot3 { animation-delay: 1.7s; }
+#boot4 { animation-delay: 2.4s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Title */
+.intro-title {
+    font-size: 58px;
+    margin-top: 40px;
+    color: white;
+    letter-spacing: 0.18em;
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(0,255,230,0.6);
+    animation: titlePop 1.2s forwards ease-out;
+    animation-delay: 3.1s;
+    font-family: "Orbitron", sans-serif;
+}
+
+@keyframes titlePop {
+    0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.intro-sub {
+    color: #c8eaff;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 3.8s;
+    letter-spacing: 0.12em;
+}
+
+/* Press any key */
+.intro-press {
+    color: #ffffffb0;
+    margin-top: 40px;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    opacity: 0;
+    animation: blink 1.5s infinite;
+    animation-delay: 4.5s;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.25; }
+}
+
+
+
+/* ---------------------------------------------
+   IMPROVED SUCCESS SCREEN
+----------------------------------------------*/
+
+.upgraded-success {
+    width: 500px;
+    background: rgba(5, 20, 35, 0.85);
+    padding: 50px;
+    border-radius: 22px;
+    border: 1px solid rgba(0,255,200,0.08);
+    box-shadow:
+        0 0 40px rgba(0, 255, 210, 0.15),
+        inset 0 0 25px rgba(0, 255, 210, 0.05);
+    text-align: center;
+    animation: successFade 0.8s ease-out forwards;
+}
+
+@keyframes successFade {
+    0% { opacity: 0; transform: translateY(25px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.success-check {
+    font-size: 60px;
+    color: #00f5d4;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(0,255,210,0.8);
+    animation: successGlow 2s infinite alternate;
+}
+
+@keyframes successGlow {
+    0% { text-shadow: 0 0 8px rgba(0,255,210,0.6); opacity: 0.7; }
+    100% { text-shadow: 0 0 20px rgba(0,255,210,1); opacity: 1; }
+}
+
+.success-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: white;
+    letter-spacing: 0.12em;
+}
+
+.success-detail {
+    color: #c8eaff;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.success-points-box {
+    background: rgba(255,255,255,0.05);
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(0,255,213,0.15);
+}
+
+.success-points {
+    font-size: 40px;
+    font-weight: bold;
+    color: #00f5d4;
+    text-shadow: 0 0 0px rgba(0,255,210,0.8);
+}
+
+.success-label {
+    display: block;
+    font-size: 13px;
+    color: #b6cdd9;
+    margin-top: 5px;
+}
+
+.success-button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #00f5d4, #00d4ff);
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.15em;
+    transition: 0.25s;
+}
+
+.success-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(0,255,210,0.7);
+}
+
+
+/* --------------------------------------------------
+   LEVEL 2 SCREEN (Styled like your screenshot)
+-------------------------------------------------- */
+
+.level2-screen {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, #0a1624, #020611 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+}
+
+.level2-screen.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* CARD */
+.level2-card {
+    width: 420px;
+    padding: 40px 50px;
+    background: rgba(8, 18, 30, 0.75);
+    border-radius: 20px;
+    border: 1px solid #00f5d4;
+    box-shadow: 0 0 25px rgba(0, 255, 200, 0.1);
+    text-align: center;
+}
+
+/* TITLE */
+.level2-title {
+    font-family: "Orbitron";
+    font-size: 48px;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* SUBTITLE */
+.level2-sub {
+    color: #00f5d4;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+}
+
+/* OBjECTIVE BOX */
+.level2-objective-box {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+/* ROW */
+.obj-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.obj-row:last-child {
+    margin-bottom: 0;
+}
+
+/* ICON */
+.obj-icon {
+    font-size: 20px;
+}
+
+/* TEXT */
+.obj-text {
+    color: #e7faff;
+    font-size: 16px;
+}
+
+/* BUTTON */
+.level2-btn {
+    width: 100%;
+    padding: 16px 0;
+    background: #00f5d4;
+    color: #001214;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.level2-btn:hover {
+    transform: translateY(-2px);
+    background: #14ffe6;
+}

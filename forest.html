@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SkyRelic – Lost Forest (Level 2)</title>
+<link rel="stylesheet" href="forest.css">
+</head>
+<body>
+
+<canvas id="gameCanvas"></canvas>
+
+<!-- LEFT HUD (HP, FRAGMENTS, TIME) -->
+<div id="leftHUD">
+
+  <div class="hud-row">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" class="hud-icon-small">
+    <span>HP</span>
+    <div class="hud-left-bar"><div id="hpBar"></div></div>
+  </div>
+
+  <div class="hud-row">
+    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909763.png" class="hud-icon-small">
+    <span>Fragments</span>
+    <div class="hud-left-bar"><div id="fragBar"></div></div>
+  </div>
+
+  <div class="hud-row">
+    <img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" class="hud-icon-small">
+    <span>Time</span>
+    <div class="hud-left-bar"><div id="timeBar"></div></div>
+  </div>
+
+</div>
+
+<!-- NOTIFICATION POPUPS -->
+<div id="notifications"></div>
+
+<!-- BLUE MISSION UI -->
+<div id="gameOverlay" class="hidden">
+    <div id="overlayCard">
+        <div id="overlayTitle"></div>
+        <div id="overlaySub"></div>
+        <div id="overlayPoints"></div>
+
+        <div class="overlay-buttons">
+            <button id="btnRestart">Retry</button>
+            <button id="btnExit">Exit</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
+<script src="forest.js?v=200"></script>
+
+</body>
+</html>
