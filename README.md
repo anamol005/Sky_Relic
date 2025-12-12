@@ -9,7 +9,7 @@ Two-level browser game using:
 - OpenWeatherMap API
 
 -------------------------
-## 1. PROJECT STRUCTURE
+1. PROJECT STRUCTURE
 -------------------------
 ```
 skyrelic_game/
@@ -178,7 +178,6 @@ LEVEL 2: The Lost Forest
 ## 👨‍💻 Group - C
 
 Anamol, Biplov, Sandesh, Sudhir
-
 Bachelor of Information Technology  
 Metropolia University of Applied Sciences
 
