@@ -126,7 +126,7 @@ LEVEL 2: The Lost Forest
 - Loaded from forest.html (button from Level 1).
 - Top-down / angled 3D camera using Three.js.
 - Environment:
-    * Forest ground plane.
+    * Forest ground plain.
     * Random trees (40).
     * Player as a blue capsule.
     * 3 red enemy guards.
