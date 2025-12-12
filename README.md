@@ -174,10 +174,7 @@ LEVEL 2: The Lost Forest
 
 ## 👨‍💻 Group - C
 
-Anamol Khadka  
-Biplov Gyawali
-Sandesh Thapa
-Sudhir Shrestha
+Anamol, Biplov, Sandesh, Sudhir
 Bachelor of Information Technology  
 Metropolia University of Applied Sciences
 
