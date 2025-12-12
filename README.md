@@ -177,8 +177,12 @@ LEVEL 2: The Lost Forest
 
 ## 👨‍💻 Group - C
 
-Anamol, Biplov, Sandesh, Sudhir
-Bachelor of Information Technology  
-Metropolia University of Applied Sciences
+**Members:**  
+Anamol, Biplov, Sandesh, Sudhir  
 
+**Program:**  
+Bachelor of Information Technology  
+
+**University:**  
+Metropolia University of Applied Sciences
 ---
