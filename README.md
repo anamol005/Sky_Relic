@@ -11,17 +11,20 @@ Two-level browser game using:
 -------------------------
 ## 1. PROJECT STRUCTURE
 -------------------------
+```
+skyrelic_game/
+│
+├── index.html        → Home + Level 1 (USA Airspace map)
+├── forest.html       → Level 2 (Lost Forest 3D)
+├── forest.js         → Level 2 Three.js gameplay
+├── main.js           → Level 1 logic
+├── styles.css        → All game styling except Level 2
+├── style.css         → Level 2 game styling
+│
+└── backend/
+    └── app.py        → Flask backend (MySQL + OpenWeatherMap)
+```
 
-(root folder)
-  ├─ index.html       -> Home + Level 1 (USA Airspace map)
-  ├─ forest.html      -> Level 2 (Lost Forest 3D)
-  ├─ forest.js        -> Level 2 Three.js gameplay
-  ├─ styles.css       -> All game styling expect level 2
-  ├─ styles.css       -> Level 2 game styling
-  ├─ main.js          -> Level 1 logic
-  ├─ forest.js        -> Level 2 logic
-  └─ backend/
-        └─ app.py     -> Flask backend (MySQL + OpenWeatherMap)
 
 
 -------------------------
