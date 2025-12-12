@@ -1,4 +1,4 @@
-Sky Relic: Treasure Hunt
+# 🌌 Sky Relic — Treasure Hunt
 ========================
 
 Two-level browser game using:
@@ -16,6 +16,7 @@ Two-level browser game using:
 (root folder)
   ├─ index.html       -> Home + Level 1 (USA Airspace map)
   ├─ forest.html      -> Level 2 (Lost Forest 3D)
+  ├─ forest.js        -> Level 2 Three.js gameplay
   ├─ styles.css       -> All game styling
   ├─ main.js          -> Level 1 logic
   ├─ forest.js        -> Level 2 logic
@@ -44,57 +45,33 @@ The backend uses:
   user     = root
   password = user
 
-Steps:
+## ⚙️ Backend Setup
 
-1) Open a terminal and go into the "backend" folder:
+```bash
+pip install flask flask-cors mysql-connector-python requests
+cd backend
+python app.py
+```
 
-   cd backend
+Backend runs at:
+```
+http://localhost:8000
+```
 
-2) (Optional) Create and activate a virtual environment:
+---
 
-   python -m venv venv
-   # Windows:
-   venv\Scripts\activate
-   # Linux/macOS:
-   source venv/bin/activate
+## 🌐 Frontend Setup
 
-3) Install dependencies:
+```bash
+python -m http.server 8000
+```
 
-   pip install flask flask-cors mysql-connector-python requests
+Open:
+```
+http://localhost:8000/index.html
+```
 
-4) Make sure your MySQL server is running and the 'airport' DB exists.
-   The app will query 8 US airports by IATA code (JFK, LAX, ORD, DFW, ATL, DEN, SEA, MIA).
-
-5) Run the Flask server:
-
-   python app.py
-
-Backend URL:
-   http://localhost:5000
-
-Available endpoints:
-
-   GET /api/airports
-      -> Returns 8 airports (from DB or a fallback list)
-
-   GET /api/weather?lat=XX&lon=YY
-      -> Proxies OpenWeatherMap and returns live weather JSON
-
-
--------------------------
-3. FRONTEND SETUP
--------------------------
-
-You can open index.html directly, but it's better to use a small local server
-so that everything behaves like a real web app.
-
-From the project root (where index.html is):
-
-   python -m http.server 8000
-
-Then open in your browser:
-
-   http://localhost:8000/index.html
+---
 
 
 -------------------------
@@ -193,26 +170,15 @@ LEVEL 2: The Lost Forest
         --accent: #00f5d4;
         --bg: etc...
 
-- You can edit text labels to better match your story or assignment
-  (for example add more about the Sky Relic lore in the HTML text).
+---
 
+## 👨‍💻 Group - C
 
--------------------------
-6. HOW TO PRESENT TO TEACHER
--------------------------
+Anamol Khadka  
+Biplov Gyawali
+Sandesh Thapa
+Sudhir Shrestha
+Bachelor of Information Technology  
+Metropolia University of Applied Sciences
 
-1) Explain that Level 1 demonstrates:
-   - Integration of HTML/CSS/JS
-   - Using Leaflet.js for an interactive map
-   - Using Flask + MySQL as backend
-   - Calling a real external API (OpenWeatherMap)
-   - Game mechanics based on distance + weather.
-
-2) Explain that Level 2 demonstrates:
-   - Basic 3D game programming with Three.js
-   - Player controls, enemies, collision detection
-   - Timer, health system, and win/lose logic.
-
-3) Show how both levels connect through a single story:
-   - Level 1 = triangulating relic signal over USA
-   - Level 2 = entering the Lost Forest to collect the relic fragments.
+---
