@@ -9,7 +9,7 @@ Two-level browser game using:
 - OpenWeatherMap API
 
 -------------------------
-1. PROJECT STRUCTURE
+## 1. PROJECT STRUCTURE
 -------------------------
 
 (root folder)
