@@ -1,5 +1,4 @@
 # 🌌 Sky Relic — Treasure Hunt
-========================
 
 Two-level browser game using:
 - HTML, CSS, JavaScript (frontend)
