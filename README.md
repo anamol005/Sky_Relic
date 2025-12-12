@@ -40,14 +40,14 @@ Requirements:
   - latitude_deg
   - longitude_deg
   - iso_country
-
+```
 The backend uses:
   host     = 127.0.0.1
   port     = 3306
   database = airport
   user     = root
   password = user
-
+```
 ## ⚙️ Backend Setup
 
 ```bash
