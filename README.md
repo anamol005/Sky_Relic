@@ -16,7 +16,8 @@ Two-level browser game using:
   ├─ index.html       -> Home + Level 1 (USA Airspace map)
   ├─ forest.html      -> Level 2 (Lost Forest 3D)
   ├─ forest.js        -> Level 2 Three.js gameplay
-  ├─ styles.css       -> All game styling
+  ├─ styles.css       -> All game styling expect level 2
+  ├─ styles.css       -> Level 2 game styling
   ├─ main.js          -> Level 1 logic
   ├─ forest.js        -> Level 2 logic
   └─ backend/
