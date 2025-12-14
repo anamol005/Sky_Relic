@@ -144,7 +144,7 @@ LEVEL 2: The Lost Forest
     * If an enemy touches you, you lose 10 HP (with a short cooldown).
     * If HP reaches 0 -> Mission Failed.
     * If the timer runs out -> Mission Failed.
-    * If you collect all 5 treasures before HP/time runs out -> Mission Accomplished.
+    * If you collect all 5 treasures before HP/time runs out you willget 2 chest where you should find which one has win chest and you need to choose one to win or loss as you have 50-50 chance of win and loss if you select the right chest then  -> Mission Accomplished.
 
 - Result:
     * A mission overlay appears with:
