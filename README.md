@@ -19,7 +19,7 @@ skyrelic_game/
 ├── forest.js         → Level 2 Three.js gameplay
 ├── main.js           → Level 1 logic
 ├── styles.css        → All game styling except Level 2
-├── style.css         → Level 2 game styling
+├── forest.css         → Level 2 game styling
 │
 └── backend/
     └── app.py        → Flask backend (MySQL + OpenWeatherMap)
